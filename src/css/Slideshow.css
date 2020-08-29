@@ -1,80 +1,336 @@
 .root {
 	position: absolute !important;
 	top: 64px !important;
+	width: 100% !important;
 }
 
 .image {
 	width: 100% !important;
-	opacity: 90%;
+	opacity: 70%;
 }
 
 .text {
 	z-index: 1;
 	position: absolute !important;
-	top: 50px;
-	left: 100px;
+	top: 40px;
+	left: 12px;
 	color: white;
 	opacity: 90%;
+	font-size: 20px;
 }
 
-@media only screen and (max-width: 300px) {
+.date {
+	z-index: 1;
+	position: absolute !important;
+	top: -17px;
+	right: 13px;
+	color: white;
+	opacity: 90%;
+	font-size: 17px;
+}
+
+.overview {
+	z-index: 1;
+	position: absolute !important;
+	top: 120px;
+	left: 12px;
+	color: white;
+	opacity: 90%;
+	font-size: 14px;
+}
+
+.overlay {
+	background-color: rgb(0, 0, 0);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+@media only screen and (min-width: 375px) {
 	.text {
-		top: 15px;
-		left: 15px;
+		z-index: 1;
+		position: absolute !important;
+		top: 33px;
+		left: 13px;
+		color: white;
+		opacity: 90%;
+	}
+
+	.date {
+		z-index: 1;
+		position: absolute !important;
+		top: -17px;
+		right: 13px;
+		color: white;
+		opacity: 90%;
+		font-size: 17px;
+	}
+
+	.overview {
+		z-index: 1;
+		position: absolute !important;
+		top: 140px;
+		left: 13px;
+		color: white;
+		opacity: 90%;
+		font-size: 15px;
 	}
 }
 
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 430px) {
 	.text {
-		top: 15px;
-		left: 15px;
+		z-index: 1;
+		position: absolute !important;
+		top: 45px;
+		left: 16px;
+		color: white;
+		opacity: 90%;
+		font-size: 30px;
+	}
+
+	.date {
+		z-index: 1;
+		position: absolute !important;
+		top: -10px;
+		right: 15px;
+		color: white;
+		opacity: 90%;
+		font-size: 20px;
+	}
+
+	.overview {
+		z-index: 1;
+		position: absolute !important;
+		top: 170px;
+		left: 20px;
+		color: white;
+		opacity: 90%;
+		font-size: 17px;
 	}
 }
 
-@media only screen and (min-width: 360px) {
+@media only screen and (min-width: 480px) {
 	.text {
-		top: 15px;
-		left: 15px;
-	}
-}
-
-@media only screen and (min-width: 500px) {
-	.text {
-		top: 15px;
-		left: 15px;
-	}
-
-	.title {
-		font-size: 45px !important;
-	}
-}
-
-@media only screen and (min-width: 650px) {
-	.text {
-		top: 15px;
-		left: 15px;
-	}
-	.title {
-		font-size: 50px !important;
-	}
-}
-
-@media only screen and (min-width: 800px) {
-	.text {
-		top: 15px;
-		left: 15px;
-	}
-	.title {
-		font-size: 60px !important;
-	}
-}
-
-@media only screen and (min-width: 1000px) {
-	.text {
+		z-index: 1;
+		position: absolute !important;
 		top: 60px;
-		left: 60px;
+		left: 18px;
+		color: white;
+		opacity: 90%;
+		font-size: 30px;
 	}
-	.title {
-		font-size: 80px !important;
+
+	.date {
+		z-index: 1;
+		position: absolute !important;
+		top: -10px;
+		right: 15px;
+		color: white;
+		opacity: 90%;
+		font-size: 25px;
+	}
+
+	.overview {
+		z-index: 1;
+		position: absolute !important;
+		top: 200px;
+		left: 24px;
+		color: white;
+		opacity: 90%;
+		font-size: 18px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.text {
+		z-index: 1;
+		position: absolute !important;
+		top: 60px;
+		left: 15px;
+		color: white;
+		opacity: 90%;
+		font-size: 28px;
+	}
+
+	.date {
+		z-index: 1;
+		position: absolute !important;
+		top: -5px;
+		right: 20px;
+		color: white;
+		opacity: 90%;
+		font-size: 25px;
+	}
+
+	.overview {
+		z-index: 1;
+		position: absolute !important;
+		top: 270px;
+		left: 24px;
+		color: white;
+		opacity: 90%;
+		font-size: 18px;
+	}
+}
+
+@media only screen and (min-width: 668px) {
+	.text {
+		z-index: 1;
+		position: absolute !important;
+		top: 75px;
+		left: 30px;
+		color: white;
+		opacity: 90%;
+		font-size: 40px;
+	}
+
+	.date {
+		z-index: 1;
+		position: absolute !important;
+		top: 0px;
+		right: 23px;
+		color: white;
+		opacity: 90%;
+		font-size: 25px;
+	}
+
+	.overview {
+		z-index: 1;
+		position: absolute !important;
+		top: 299px;
+		left: 25px;
+		color: white;
+		opacity: 90%;
+		font-size: 22px;
+	}
+}
+
+@media only screen and (min-width: 850px) {
+	.text {
+		z-index: 1;
+		position: absolute !important;
+		top: 75px;
+		left: 20px;
+		color: white;
+		opacity: 90%;
+		font-size: 50px;
+	}
+
+	.date {
+		z-index: 1;
+		position: absolute !important;
+		top: 0px;
+		right: 23px;
+		color: white;
+		opacity: 90%;
+		font-size: 28px;
+	}
+
+	.overview {
+		z-index: 1;
+		position: absolute !important;
+		top: 390px;
+		left: 24px;
+		color: white;
+		opacity: 90%;
+		font-size: 26px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.text {
+		z-index: 1;
+		position: absolute !important;
+		top: 100px;
+		left: 18px;
+		color: white;
+		opacity: 90%;
+		font-size: 60px;
+	}
+
+	.date {
+		z-index: 1;
+		position: absolute !important;
+		top: 10px;
+		right: 30px;
+		color: white;
+		opacity: 90%;
+		font-size: 40px;
+	}
+
+	.overview {
+		z-index: 1;
+		position: absolute !important;
+		top: 465px;
+		left: 55px;
+		color: white;
+		opacity: 90%;
+		font-size: 30px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+    .text {
+		z-index: 1;
+		position: absolute !important;
+		top: 150px;
+		left: 50px;
+		color: white;
+		opacity: 90%;
+		font-size: 60px;
+	}
+
+	.date {
+		z-index: 1;
+		position: absolute !important;
+		top: 30px;
+		right: 60px;
+		color: white;
+		opacity: 90%;
+		font-size: 50px;
+	}
+
+	.overview {
+		z-index: 1;
+		position: absolute !important;
+		top:550px;
+		left: 450px;
+		color: white;
+		opacity: 90%;
+		font-size: 30px;
+	}
+}
+
+@media only screen and (min-width: 1600px) {
+    .text {
+		z-index: 1;
+		position: absolute !important;
+		top: 150px;
+		left: 80px;
+		color: white;
+		opacity: 90%;
+		font-size: 80px;
+	}
+
+	.date {
+		z-index: 1;
+		position: absolute !important;
+		top: 30px;
+		right: 60px;
+		color: white;
+		opacity: 90%;
+		font-size: 50px;
+	}
+
+	.overview {
+		z-index: 1;
+		position: absolute !important;
+		top: 800px;
+		left: 500px;
+		color: white;
+		opacity: 90%;
+		font-size: 30px;
 	}
 }
