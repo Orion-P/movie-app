@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/Slideshow.css";
 import axios from "axios";
-import Carousel from "@brainhubeu/react-carousel";
+import Carousel, { autoplayPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
 //56a76f413e126fc9841c4c59db456d01
@@ -24,16 +24,19 @@ const SlideShow = () => {
 			.catch(err => {
 				console.log(err);
 			});
-	}, []);
+	}, [movies]);
 
 	console.log(movies, currentMovie);
+
 	const renderedMovies = movies.map(movie => {
 		return (
 			<div style={{ width: "100%" }}>
 				<h1 className="title text">
 					{movie.original_title ? movie.original_title : null}
 				</h1>
-				<h2 className="date">{movie.release_date.slice(5) + "-" + movie.release_date.slice(0,4)}</h2>
+				<h2 className="date">
+					{movie.release_date.slice(5) + "-" + movie.release_date.slice(0, 4)}
+				</h2>
 				<h2 className="overview">
 					{movie.overview.length < 100
 						? movie.overview
@@ -51,9 +54,28 @@ const SlideShow = () => {
 
 	return (
 		<div className="root">
-			<Carousel>{renderedMovies}</Carousel>
+			
+			<Carousel
+            plugins={['infinite']} 
+			>
+				{renderedMovies}
+			</Carousel>
+			
 		</div>
 	);
 };
 
 export default SlideShow;
+
+// <button className="ui button left-button">
+// 				<i
+// 					style={{ position: "absolute", left: "30%", top: "20%" }}
+// 					className="icon left black arrow big"
+// 				></i>
+// 			</button>
+// <button className="ui button right-button">
+// 				<i
+// 					style={{ position: "absolute", right: "24%", top: "20%" }}
+// 					className="icon right black arrow big"
+// 				></i>
+// 			</button>

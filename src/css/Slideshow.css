@@ -48,6 +48,38 @@
 	position: relative;
 }
 
+.left-button {
+	position: absolute;
+	height: 50px;
+	left: 13px;
+	top: 40%;
+	width: 5px !important;
+    z-index: 1;
+    border-radius: 20px !important;
+    background-color: rgba(114, 92, 92, 0.548) !important;
+}
+
+.right-button {
+	position: absolute;
+	height: 50px !important;
+	width: 10px !important;
+	right: 10px;
+	top: 40%;
+    z-index: 1;
+    border-radius: 20px !important;
+    background-color: rgba(114, 92, 92, 0.548) !important;
+}
+
+.right-button:hover {
+
+    background-color: rgba(136, 48, 48, 0.548) !important;
+}
+
+.left-button:hover {
+
+    background-color: rgba(136, 48, 48, 0.548) !important;
+}
+
 @media only screen and (min-width: 375px) {
 	.text {
 		z-index: 1;
@@ -272,7 +304,7 @@
 }
 
 @media only screen and (min-width: 1200px) {
-    .text {
+	.text {
 		z-index: 1;
 		position: absolute !important;
 		top: 150px;
@@ -295,7 +327,7 @@
 	.overview {
 		z-index: 1;
 		position: absolute !important;
-		top:550px;
+		top: 550px;
 		left: 450px;
 		color: white;
 		opacity: 90%;
@@ -304,7 +336,7 @@
 }
 
 @media only screen and (min-width: 1600px) {
-    .text {
+	.text {
 		z-index: 1;
 		position: absolute !important;
 		top: 150px;
