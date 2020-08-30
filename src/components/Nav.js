@@ -11,7 +11,10 @@ class Nav extends React.Component {
 				</div>
 
 				<div className="center item">
-					<SearchBar className="search" />
+					<SearchBar
+						onFormSubmit={this.props.onFormSubmit}
+						className="search"
+					/>
 				</div>
 
 				<div id="fixmargin" className="right floated item">

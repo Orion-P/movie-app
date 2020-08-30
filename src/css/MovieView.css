@@ -1,0 +1,8 @@
+
+.movie-list {
+    height: 50%;
+    width: 80%;
+    background-color: blue;
+    top: 10%;
+    z-index: 2;
+}

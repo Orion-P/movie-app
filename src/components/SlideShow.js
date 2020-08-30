@@ -26,11 +26,10 @@ const SlideShow = () => {
 			});
 	}, [movies]);
 
-	console.log(movies, currentMovie);
 
 	const renderedMovies = movies.map(movie => {
 		return (
-			<div style={{ width: "100%" }}>
+            <div style={{ width: "100%" }}>
 				<h1 className="title text">
 					{movie.original_title ? movie.original_title : null}
 				</h1>
@@ -55,8 +54,10 @@ const SlideShow = () => {
 	return (
 		<div className="root">
 			
-			<Carousel
-            plugins={['infinite']} 
+            <Carousel 
+            infinite
+            autoPlay={3000}
+            animationSpeed={800}
 			>
 				{renderedMovies}
 			</Carousel>
