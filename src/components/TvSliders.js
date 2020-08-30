@@ -33,7 +33,7 @@ const MovieSliders = () => {
 				}
 			})
 			.then(res => {
-                console.log(res.data.results)
+				console.log(res.data.results);
 				setPopular(res.data.results);
 			})
 			.catch(err => {
@@ -96,7 +96,6 @@ const MovieSliders = () => {
 
 	return (
 		<div className="ui background">
-
 			<label className="headers">
 				<strong>Airing Today</strong>
 			</label>

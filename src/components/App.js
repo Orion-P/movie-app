@@ -1,27 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "./Nav";
 import SlideShow from "./SlideShow";
 import MovieView from "./MovieView";
-import TvSliders from './TvSliders';
+import TvSliders from "./TvSliders";
 import MovieSliders from "./MovieSliders";
+import Buttons from "./Buttons";
 
-class App extends React.Component {
-	state = { term: "" };
+const App = () => {
+	const [term, setTerm] = useState("");
+	const [moviesOrTv, setMoviesOrTv] = useState(true);
 
-	onFormSubmit = term => {
-		this.setState({ term: term });
+	const onFormSubmit = term => {
+		setTerm(term);
 	};
 
-	render() {
-		return (
-			<div>
-				<Nav onFormSubmit={this.onFormSubmit} />
-				<SlideShow />
-                <MovieSliders />
-                <TvSliders></TvSliders>
-			</div>
-		);
-	}
-}
+	return (
+		<div>
+			<Nav onFormSubmit={onFormSubmit} />
+			<SlideShow />
+			<Buttons setMoviesOrTv={setMoviesOrTv}></Buttons>
+
+			{moviesOrTv === true ? <MovieSliders /> : <TvSliders />}
+		</div>
+	);
+};
 
 export default App;

@@ -8,7 +8,7 @@ import axios from "axios";
 const MovieSliders = () => {
 	const [nowPlaying, setNowPlaying] = useState([]);
 	const [popular, setPopular] = useState([]);
-	const [topRated, setTopRated] = useState([]);
+    const [topRated, setTopRated] = useState([]);
 
 	useEffect(() => {
 		//now playing
@@ -95,10 +95,7 @@ const MovieSliders = () => {
 
 	return (
 		<div className="ui background">
-			<div className="ui buttons">
-				<button className="ui button movies">Movies</button>
-				<button className="ui button tv">Tv Shows</button>
-			</div>
+			
 			<label className="headers">
 				<strong>Now Playing</strong>
 			</label>
