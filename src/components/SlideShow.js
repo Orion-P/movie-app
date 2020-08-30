@@ -24,7 +24,7 @@ const SlideShow = () => {
 			.catch(err => {
 				console.log(err);
 			});
-	}, [movies]);
+	}, []);
 
 
 	const renderedMovies = movies.map(movie => {

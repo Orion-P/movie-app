@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../css/MovieSliders.css";
+import "../css/TvSliders.css";
 
 import Carousel, { autoplayPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
@@ -13,7 +13,7 @@ const MovieSliders = () => {
 	useEffect(() => {
 		//now playing
 		axios
-			.get("https://api.themoviedb.org/3/movie/now_playing", {
+			.get("https://api.themoviedb.org/3/tv/airing_today", {
 				params: {
 					api_key: "56a76f413e126fc9841c4c59db456d01"
 				}
@@ -27,12 +27,13 @@ const MovieSliders = () => {
 
 		//popular
 		axios
-			.get("https://api.themoviedb.org/3/movie/popular", {
+			.get("https://api.themoviedb.org/3/tv/popular", {
 				params: {
 					api_key: "56a76f413e126fc9841c4c59db456d01"
 				}
 			})
 			.then(res => {
+                console.log(res.data.results)
 				setPopular(res.data.results);
 			})
 			.catch(err => {
@@ -41,7 +42,7 @@ const MovieSliders = () => {
 
 		//top rated
 		axios
-			.get("https://api.themoviedb.org/3/movie/top_rated", {
+			.get("https://api.themoviedb.org/3/tv/top_rated", {
 				params: {
 					api_key: "56a76f413e126fc9841c4c59db456d01"
 				}
@@ -62,7 +63,7 @@ const MovieSliders = () => {
 					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
 				></img>
 
-				<div className="ui header titles">{item.title}</div>
+				<div className="ui header titles">{item.name}</div>
 			</div>
 		);
 	});
@@ -75,7 +76,7 @@ const MovieSliders = () => {
 					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
 				></img>
 
-				<div className="ui header titles">{item.title}</div>
+				<div className="ui header titles">{item.name}</div>
 			</div>
 		);
 	});
@@ -88,19 +89,16 @@ const MovieSliders = () => {
 					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
 				></img>
 
-				<div className="ui header titles">{item.title}</div>
+				<div className="ui header titles">{item.name}</div>
 			</div>
 		);
 	});
 
 	return (
 		<div className="ui background">
-			<div className="ui buttons">
-				<button className="ui button movies">Movies</button>
-				<button className="ui button tv">Tv Shows</button>
-			</div>
+
 			<label className="headers">
-				<strong>Now Playing</strong>
+				<strong>Airing Today</strong>
 			</label>
 			<Carousel
 				clickToChange
