@@ -4,8 +4,11 @@ import "../css/Nav.css";
 
 class Nav extends React.Component {
 	onClick = () => {
+		if (window.location.pathname === "/") {
+			return;
+		}
 		window.location.pathname = "/";
-	}
+	};
 
 	render() {
 		return (
