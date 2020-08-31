@@ -7,10 +7,12 @@ import Routes from "./Routes";
 import Footer from "./Footer";
 
 const App = () => {
+    
 	const [term, setTerm] = useState("");
-	const [searchResults, setSearchResults] = useState([]);
+    const [searchResults, setSearchResults] = useState([]);
+    
 
-	const onFormSubmit = (term, category) => {
+	const onFormSubmit = (term, category, index) => {
 		axios
 			.get(`https://api.themoviedb.org/3${category}`, {
 				params: {

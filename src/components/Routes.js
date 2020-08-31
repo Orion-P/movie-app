@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
-import SingleTitle from "./SingleTitle";
+import SingleTitle from "./TitleDetails";
 import SlideShow from "./SlideShow";
 import TvSliders from "./TvSliders";
 import MovieSliders from "./MovieSliders";
 import Buttons from "./Buttons";
 
 import "../css/Routes.css";
+import TitleDetails from "./TitleDetails";
 
 const Routes = props => {
 	const [moviesOrTv, setMoviesOrTv] = useState(true);
 	const [locationKeys, setLocationKeys] = useState([]);
+	const [updateCaro, setUpdateCaro] = useState(true);
+	const [caroIndex, setCaroIndex] = useState(0);
+	const [currentTitle, setCurrentTitle] = useState({});
 
 	const history = useHistory();
 
@@ -47,17 +51,24 @@ const Routes = props => {
 		}
 
 		return (
-			<div>
-				<img
-					alt={result.overview}
-					className="ui image images"
-					src={`https://image.tmdb.org/t/p/original${result.poster_path}`}
-				></img>
+			<Link
+				onClick={e => {
+					setCurrentTitle(result);
+				}}
+				to={"/title-details"}
+			>
+				<div>
+					<img
+						alt={result.overview}
+						className="ui image images"
+						src={`https://image.tmdb.org/t/p/original${result.poster_path}`}
+					></img>
 
-				<div className="ui header titles">
-					{result.title ? result.title : result.name}
+					<div className="ui header titles">
+						{result.title ? result.title : result.name}
+					</div>
 				</div>
-			</div>
+			</Link>
 		);
 	});
 
@@ -76,10 +87,10 @@ const Routes = props => {
 	}
 	//TODO create single item page
 
-	if (window.location.pathname === "/title") {
+	if (window.location.pathname === "/title-details") {
 		return (
 			<div>
-				<SingleTitle />
+				<TitleDetails title={currentTitle} />
 			</div>
 		);
 	}
@@ -110,8 +121,8 @@ const Routes = props => {
 							style={{
 								textAlign: "center",
 								paddingTop: "50px",
-                                fontSize: "35px",
-                                fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+								fontSize: "35px",
+								fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
                                 Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`
 							}}
 						>
@@ -119,11 +130,11 @@ const Routes = props => {
 							{props.searchResults[0].name ? "TV Shows" : "Movies"}
 						</h1>
 						<Carousel
+							value={caroIndex}
+							onChange={e => {
+								setCaroIndex(e);
+							}}
 							clickToChange
-							className="caro"
-							arrows
-							infinite
-							centered
 							breakpoints={{
 								375: {
 									slidesPerPage: 1
@@ -147,6 +158,9 @@ const Routes = props => {
 									slidesPerPage: 5
 								}
 							}}
+							className="caro"
+							arrows
+							centered
 						>
 							{renderedSearchResults}
 						</Carousel>

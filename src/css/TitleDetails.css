@@ -1,0 +1,33 @@
+.title-details {
+    padding-top: 80px !important;
+    background-color: aliceblue;
+}
+
+img.backdrop {
+    width: 100% !important;
+}
+
+p {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.description {
+    margin-top: -40px;
+    margin-bottom: -30px;
+    font-size: 18px;
+}
+
+.release {
+    font-size: 19px;
+
+}
+
+.images {
+    padding-top: 20px;
+}
+
+.title {
+    font-size: 30px;
+    color: rgb(40, 40, 119)
+}
