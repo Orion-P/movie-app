@@ -63,7 +63,6 @@ class SearchBar extends React.Component {
 								<div
 									onClick={() => {
 										this.setState({ search: "/search/movie" });
-										this.setState({ activeDropdown: false });
 									}}
 									className="item"
 								>
@@ -72,7 +71,6 @@ class SearchBar extends React.Component {
 								<div
 									onClick={() => {
 										this.setState({ search: "/search/tv" });
-										this.setState({ activeDropdown: false });
 									}}
 									className="item"
 								>
