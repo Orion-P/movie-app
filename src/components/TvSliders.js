@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "../css/TvSliders.css";
-
-import Carousel, { autoplayPlugin } from "@brainhubeu/react-carousel";
+import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import axios from "axios";
+
+import "../css/TvSliders.css";
 
 const MovieSliders = () => {
 	const [nowPlaying, setNowPlaying] = useState([]);

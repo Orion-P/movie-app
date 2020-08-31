@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import Nav from "./Nav";
-
-import Footer from "./Footer";
+import { BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
+
+import Nav from "./Nav";
 import Routes from "./Routes";
+import Footer from "./Footer";
 
 const App = () => {
 	const [term, setTerm] = useState("");
@@ -19,21 +20,23 @@ const App = () => {
 			})
 			.then(res => {
 				setSearchResults(res.data.results);
-				window.history.pushState({ page_id: "search" }, "", "/search");
 			})
 			.catch(err => {
 				console.log(err);
 			});
 
 		setTerm(term);
+        window.history.pushState({ page_id: "search" }, "", "/search");
 	};
 
 	return (
-		<div>
-			<Nav onFormSubmit={onFormSubmit} />
-			<Routes searchResults={searchResults}></Routes>
-			<Footer></Footer>
-		</div>
+		<Router>
+			<div>
+				<Nav onFormSubmit={onFormSubmit} />
+				<Routes searchResults={searchResults}></Routes>
+				<Footer></Footer>
+			</div>
+		</Router>
 	);
 };
 

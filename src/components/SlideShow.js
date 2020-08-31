@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "../css/Slideshow.css";
 import axios from "axios";
-import Carousel, { autoplayPlugin } from "@brainhubeu/react-carousel";
+import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
-//56a76f413e126fc9841c4c59db456d01
+import "../css/Slideshow.css";
 
 const SlideShow = () => {
 	const [movies, setMovies] = useState([]);

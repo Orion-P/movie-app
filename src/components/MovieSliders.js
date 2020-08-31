@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
-import "../css/MovieSliders.css";
-
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import axios from "axios";
+
+import "../css/MovieSliders.css";
 
 const MovieSliders = () => {
 	const [nowPlaying, setNowPlaying] = useState([]);
 	const [popular, setPopular] = useState([]);
 	const [topRated, setTopRated] = useState([]);
+	const [selectedTitle, setSelectedTitle] = useState({});
+
+
+
+    const passTitleUp = () => {
+        console.log(selectedTitle);
+    }
 
 	useEffect(() => {
 		//now playing
@@ -56,7 +63,15 @@ const MovieSliders = () => {
 
 	const nowPlayingRendered = nowPlaying.map(item => {
 		return (
-			<div className="slider">
+			<div
+				onClick={e => {
+					if (e.target.parentNode.classList.contains("slider")) {
+						setSelectedTitle(item);
+						window.location.pathname = "/title";
+					}
+				}}
+				className="slider"
+			>
 				<img
 					className="ui image images"
 					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
