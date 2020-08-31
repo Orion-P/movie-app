@@ -1,6 +1,14 @@
 .button-box {
     background-color: rgba(20, 3, 3, 0.801);
+    background: linear-gradient(to top, #6b837e, #253744);
     width: 100%;
-    padding-bottom: 15px;
+    padding: 0px;
+    padding-bottom: 33px;
     margin-bottom: -31px;
+    margin-top: 0px;
+    z-index: 3;
+}
+
+.ui.buttons {
+    padding-top: 33px !important;
 }

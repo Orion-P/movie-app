@@ -198,7 +198,7 @@ const MovieSliders = () => {
 						slidesPerPage: 5
 					}
 				}}
-				className="caro"
+				className="caro caro-bottom"
 				arrows
 				infinite
 				centered
