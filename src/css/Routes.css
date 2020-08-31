@@ -1,4 +1,10 @@
 .caro {
-	padding-bottom: 40px;
+    padding-bottom: 50px;
+    font-size: 17px;
 }
 
+.titles {
+    padding-right: 30px !important;
+    padding-left: 28px !important;
+
+}

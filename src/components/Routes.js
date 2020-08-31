@@ -54,7 +54,7 @@ const Routes = props => {
 					src={`https://image.tmdb.org/t/p/original${result.poster_path}`}
 				></img>
 
-				<div className="ui header titles">{result.title}</div>
+				<div className="ui header titles">{result.title ? result.title : result.name}</div>
 			</div>
 		);
 	});

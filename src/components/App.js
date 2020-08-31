@@ -10,9 +10,9 @@ const App = () => {
 	const [term, setTerm] = useState("");
 	const [searchResults, setSearchResults] = useState([]);
 
-	const onFormSubmit = (term, e) => {
+	const onFormSubmit = (term, category) => {
 		axios
-			.get("https://api.themoviedb.org/3/search/movie", {
+			.get(`https://api.themoviedb.org/3${category}`, {
 				params: {
 					api_key: "56a76f413e126fc9841c4c59db456d01",
 					query: term

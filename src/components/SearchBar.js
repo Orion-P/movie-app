@@ -3,12 +3,30 @@ import React from "react";
 import "../css/SearchBar.css";
 
 class SearchBar extends React.Component {
-	state = { term: "" };
+	state = { term: "", activeDropdown: false, search: "/search/movie" };
+
+	constructor(props) {
+		super(props);
+		this.ref = React.createRef();
+	}
+
+	componentDidMount() {
+		document.querySelector("body").addEventListener("click", e => {
+			if (this.ref.current.contains(e.target)) {
+				return;
+			}
+			this.setState({ activeDropdown: false });
+		});
+	}
+
+	componentDidUpdate() {
+		console.log(this.state.activeDropdown);
+	}
 
 	onFormSubmit = e => {
 		e.preventDefault();
 
-		this.props.onFormSubmit(this.state.term);
+		this.props.onFormSubmit(this.state.term, this.state.search);
 		//TODO: Make sure we call callback from parent component
 	};
 
@@ -18,14 +36,62 @@ class SearchBar extends React.Component {
 
 	render() {
 		return (
-			<form onSubmit={this.onFormSubmit} className="ui form fixpadding">
+			<form
+				ref={this.ref}
+				onSubmit={this.onFormSubmit}
+				className="ui form fixpadding"
+			>
 				<div className="field ui icon input">
-					<i className="search icon"></i>
+					<i
+						onClick={() => {
+							if (this.state.activeDropdown === true) {
+								return this.setState({ activeDropdown: false });
+							}
+							return this.setState({
+								activeDropdown: !this.state.activeDropdown
+							});
+						}}
+						style={{ marginRight: "1px" }}
+						className="black angle down icon link"
+					>
+						<div
+							className={`ui simple ${
+								this.state.activeDropdown === true ? "active" : ""
+							} dropdown`}
+						>
+							<div className="menu">
+								<div
+									onClick={() => {
+										this.setState({ search: "/search/movie" });
+										this.setState({ activeDropdown: false });
+									}}
+									className="item"
+								>
+									Movies
+								</div>
+								<div
+									onClick={() => {
+										this.setState({ search: "/search/tv" });
+										this.setState({ activeDropdown: false });
+									}}
+									className="item"
+								>
+									Tv Shows
+								</div>
+							</div>
+						</div>
+					</i>
+
+					<i style={{ marginRight: "20px" }} className="search icon"></i>
 					<input
 						className="search"
 						name="search"
 						type="text"
-						placeholder="Movie Search"
+						placeholder={
+							this.state.search === "/search/movie"
+								? "Search Movies"
+								: "Search TV Shows"
+						}
 						value={this.state.term}
 						onChange={this.onInputChange}
 					></input>
