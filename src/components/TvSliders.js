@@ -57,8 +57,9 @@ const MovieSliders = () => {
 
 	const nowPlayingRendered = nowPlaying.map(item => {
 		return (
-			<div className="slider">
+			<div key={item.id} className="slider">
 				<img
+					alt={item.overview}
 					className="ui image images"
 					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
 				></img>
@@ -70,8 +71,9 @@ const MovieSliders = () => {
 
 	const nowPopularRendered = popular.map(item => {
 		return (
-			<div className="slider">
+			<div key={item.id} className="slider">
 				<img
+					alt={item.overview}
 					className="ui image images"
 					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
 				></img>
@@ -83,8 +85,9 @@ const MovieSliders = () => {
 
 	const nowTopRatedRendered = topRated.map(item => {
 		return (
-			<div className="slider">
+			<div key={item.id} className="slider">
 				<img
+					alt={item.overview}
 					className="ui image images"
 					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
 				></img>

@@ -18,7 +18,7 @@ const Routes = props => {
 	const history = useHistory();
 
 	useEffect(() => {
-		if (performance.navigation.type == PerformanceNavigation.TYPE_RELOAD) {
+		if (performance.navigation.type === PerformanceNavigation.TYPE_RELOAD) {
 			window.location.pathname = "/";
 		}
 
@@ -39,19 +39,17 @@ const Routes = props => {
 				}
 			}
 		});
-    }, [locationKeys]);
-    
-
-
+	}, [locationKeys, history]);
 
 	const renderedSearchResults = props.searchResults.map(result => {
 		if (result.poster_path === null) {
-			return;
+			return null;
 		}
 
 		return (
 			<div>
 				<img
+					alt={result.overview}
 					className="ui image images"
 					src={`https://image.tmdb.org/t/p/original${result.poster_path}`}
 				></img>

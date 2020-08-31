@@ -13,7 +13,7 @@ class Nav extends React.Component {
 
 	render() {
 		return (
-			<div style={{ backgroundColor: "#1a0000" }} class="ui fixed text menu">
+			<div style={{ backgroundColor: "#1a0000" }} className="ui fixed text menu">
 				<div style={{ paddingLeft: "15px" }} className="item">
 					<i onClick={this.onClick} href="/" className="icon link home big"></i>
 				</div>

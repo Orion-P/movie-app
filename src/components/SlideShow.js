@@ -25,7 +25,7 @@ const SlideShow = () => {
 
 	const renderedMovies = movies.map(movie => {
 		return (
-			<div style={{ width: "100%" }}>
+			<div key={movie.id} style={{ width: "100%" }}>
 				<h1 className="title text">
 					{movie.original_title ? movie.original_title : null}
 				</h1>
@@ -39,6 +39,7 @@ const SlideShow = () => {
 				</h2>
 				<div className="overlay">
 					<img
+						alt={movie.overview}
 						src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
 						className="image"
 					></img>

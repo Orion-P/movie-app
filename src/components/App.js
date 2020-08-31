@@ -26,7 +26,7 @@ const App = () => {
 			});
 
 		setTerm(term);
-        window.history.pushState({ page_id: "search" }, "", "/search");
+		window.history.pushState({ page_id: "search" }, "", "/search");
 	};
 
 	return (

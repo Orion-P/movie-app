@@ -11,12 +11,6 @@ const MovieSliders = () => {
 	const [topRated, setTopRated] = useState([]);
 	const [selectedTitle, setSelectedTitle] = useState({});
 
-
-
-    const passTitleUp = () => {
-        console.log(selectedTitle);
-    }
-
 	useEffect(() => {
 		//now playing
 		axios
@@ -64,6 +58,7 @@ const MovieSliders = () => {
 	const nowPlayingRendered = nowPlaying.map(item => {
 		return (
 			<div
+				key={item.id}
 				onClick={e => {
 					if (e.target.parentNode.classList.contains("slider")) {
 						setSelectedTitle(item);
@@ -73,6 +68,7 @@ const MovieSliders = () => {
 				className="slider"
 			>
 				<img
+					alt={item.overview}
 					className="ui image images"
 					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
 				></img>
@@ -84,8 +80,9 @@ const MovieSliders = () => {
 
 	const nowPopularRendered = popular.map(item => {
 		return (
-			<div className="slider">
+			<div className="slider" key={item.id}>
 				<img
+					alt={item.overview}
 					className="ui image images"
 					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
 				></img>
@@ -97,8 +94,9 @@ const MovieSliders = () => {
 
 	const nowTopRatedRendered = topRated.map(item => {
 		return (
-			<div className="slider">
+			<div key={item.id} className="slider">
 				<img
+					alt={item.overview}
 					className="ui image images"
 					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
 				></img>
