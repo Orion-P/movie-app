@@ -1,12 +1,12 @@
 .center {
-    position: relative !important;
-    margin: 0 auto !important;
+	position: relative !important;
+	margin: 0 auto !important;
 }
 
 #fixmargin {
-    margin-left: 0 !important;
+	margin-left: 0 !important;
 }
 
 i {
-    color: aliceblue
+	color: aliceblue;
 }

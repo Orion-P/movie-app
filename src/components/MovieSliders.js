@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "../css/MovieSliders.css";
 
-import Carousel, { arrowsPlugin }from "@brainhubeu/react-carousel";
+import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import axios from "axios";
 
 const MovieSliders = () => {
 	const [nowPlaying, setNowPlaying] = useState([]);
 	const [popular, setPopular] = useState([]);
-    const [topRated, setTopRated] = useState([]);
+	const [topRated, setTopRated] = useState([]);
 
 	useEffect(() => {
-        //now playing
+		//now playing
 		axios
 			.get("https://api.themoviedb.org/3/movie/now_playing", {
 				params: {
@@ -95,7 +95,6 @@ const MovieSliders = () => {
 
 	return (
 		<div className="ui background">
-			
 			<label className="headers">
 				<strong>Now Playing</strong>
 			</label>

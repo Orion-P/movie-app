@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import '../css/MovieView.css';
+import "../css/MovieView.css";
 
 const MovieView = props => {
 	const [results, setResults] = useState([]);

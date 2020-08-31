@@ -53,8 +53,8 @@
 	font-family: Arial, Helvetica, sans-serif !important;
 	font-size: 35px !important;
 	margin-bottom: -20px !important;
-    padding-top: 30px !important;
-    padding-left: 9px !important;
+	padding-top: 30px !important;
+	padding-left: 9px !important;
 	color: rgb(32, 20, 20);
 }
 
@@ -64,8 +64,8 @@
 }
 
 div.slider {
-    padding-top: 10px !important;
-    padding-right: 10px !important;
+	padding-top: 10px !important;
+	padding-right: 10px !important;
 }
 
 .caro-bottom {
@@ -83,4 +83,3 @@ div.slider {
 	margin-left: 10px !important;
 	border-radius: 20px !important;
 }
-

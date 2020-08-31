@@ -16,7 +16,10 @@ const Footer = () => {
 			</p>
 			<br></br>
 			<p style={{ color: "white", margin: "0 auto" }}>
-				<a href="https://github.com/Orion-P/movie-app" style={{ color: "skyblue" }}>
+				<a
+					href="https://github.com/Orion-P/movie-app"
+					style={{ color: "skyblue" }}
+				>
 					<strong>Github </strong>
 				</a>
 				|
