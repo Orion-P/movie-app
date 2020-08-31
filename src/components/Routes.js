@@ -54,7 +54,9 @@ const Routes = props => {
 					src={`https://image.tmdb.org/t/p/original${result.poster_path}`}
 				></img>
 
-				<div className="ui header titles">{result.title ? result.title : result.name}</div>
+				<div className="ui header titles">
+					{result.title ? result.title : result.name}
+				</div>
 			</div>
 		);
 	});
@@ -103,38 +105,52 @@ const Routes = props => {
 						We couldn't find anything for that search term. Please try again.
 					</h1>
 				) : (
-					<Carousel
-						clickToChange
-						className="caro"
-						arrows
-						infinite
-						centered
-						breakpoints={{
-							375: {
-								slidesPerPage: 1
-							},
-							500: {
-								slidesPerPage: 1
-							},
-							750: {
-								slidesPerPage: 3
-							},
-							1000: {
-								slidesPerPage: 3
-							},
-							1250: {
-								slidesPerPage: 5
-							},
-							1500: {
-								slidesPerPage: 5
-							},
-							1920: {
-								slidesPerPage: 5
-							}
-						}}
-					>
-						{renderedSearchResults}
-					</Carousel>
+					<div>
+						<h1
+							style={{
+								textAlign: "center",
+								paddingTop: "50px",
+                                fontSize: "35px",
+                                fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`
+							}}
+						>
+							Search Results For:<br></br>
+							{props.searchResults[0].name ? "TV Shows" : "Movies"}
+						</h1>
+						<Carousel
+							clickToChange
+							className="caro"
+							arrows
+							infinite
+							centered
+							breakpoints={{
+								375: {
+									slidesPerPage: 1
+								},
+								500: {
+									slidesPerPage: 1
+								},
+								750: {
+									slidesPerPage: 3
+								},
+								1000: {
+									slidesPerPage: 3
+								},
+								1250: {
+									slidesPerPage: 5
+								},
+								1500: {
+									slidesPerPage: 5
+								},
+								1920: {
+									slidesPerPage: 5
+								}
+							}}
+						>
+							{renderedSearchResults}
+						</Carousel>
+					</div>
 				)}
 			</div>
 		);

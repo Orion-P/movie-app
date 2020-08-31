@@ -57,16 +57,7 @@ const MovieSliders = () => {
 
 	const nowPlayingRendered = nowPlaying.map(item => {
 		return (
-			<div
-				key={item.id}
-				onClick={e => {
-					if (e.target.parentNode.classList.contains("slider")) {
-						setSelectedTitle(item);
-						window.location.pathname = "/title";
-					}
-				}}
-				className="slider"
-			>
+			<div key={item.id} className="slider">
 				<img
 					alt={item.overview}
 					className="ui image images"

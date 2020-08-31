@@ -13,14 +13,12 @@ class SearchBar extends React.Component {
 	componentDidMount() {
 		document.querySelector("body").addEventListener("click", e => {
 			if (this.ref.current.contains(e.target)) {
+				this.setState({ term: "" });
 				return;
 			}
 			this.setState({ activeDropdown: false });
+			this.setState({ term: "" });
 		});
-	}
-
-	componentDidUpdate() {
-		console.log(this.state.activeDropdown);
 	}
 
 	onFormSubmit = e => {

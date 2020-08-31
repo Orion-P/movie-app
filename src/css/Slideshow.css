@@ -105,7 +105,8 @@
 		left: 13px;
 		color: white;
 		opacity: 90%;
-		font-size: 15px;
+		font-size: 13px;
+		padding-right: 10px;
 	}
 }
 
@@ -137,7 +138,8 @@
 		left: 20px;
 		color: white;
 		opacity: 90%;
-		font-size: 17px;
+		font-size: 14px;
+		padding-right: 10px;
 	}
 }
 
@@ -169,7 +171,8 @@
 		left: 24px;
 		color: white;
 		opacity: 90%;
-		font-size: 18px;
+		font-size: 16px;
+		padding-right: 10px;
 	}
 }
 
@@ -197,11 +200,12 @@
 	.overview {
 		z-index: 1;
 		position: absolute !important;
-		top: 270px;
+		top: 260px;
 		left: 24px;
 		color: white;
 		opacity: 90%;
-		font-size: 18px;
+		font-size: 16px;
+		padding-right: 10px;
 	}
 }
 
@@ -229,11 +233,11 @@
 	.overview {
 		z-index: 1;
 		position: absolute !important;
-		top: 299px;
+		top: 280px;
 		left: 25px;
 		color: white;
 		opacity: 90%;
-		font-size: 22px;
+		font-size: 18px;
 	}
 }
 
@@ -261,11 +265,11 @@
 	.overview {
 		z-index: 1;
 		position: absolute !important;
-		top: 390px;
+		top: 375px;
 		left: 24px;
 		color: white;
 		opacity: 90%;
-		font-size: 26px;
+		font-size: 21px;
 	}
 }
 
@@ -274,7 +278,7 @@
 		z-index: 1;
 		position: absolute !important;
 		top: 100px;
-		left: 18px;
+		left: 22px;
 		color: white;
 		opacity: 90%;
 		font-size: 60px;
@@ -293,11 +297,11 @@
 	.overview {
 		z-index: 1;
 		position: absolute !important;
-		top: 465px;
+		top: 445px;
 		left: 55px;
 		color: white;
 		opacity: 90%;
-		font-size: 30px;
+		font-size: 24px;
 	}
 }
 
@@ -326,7 +330,7 @@
 		z-index: 1;
 		position: absolute !important;
 		top: 550px;
-		left: 450px;
+		left: 430px;
 		color: white;
 		opacity: 90%;
 		font-size: 30px;
@@ -357,10 +361,10 @@
 	.overview {
 		z-index: 1;
 		position: absolute !important;
-		top: 800px;
-		left: 500px;
+		top: 750px;
+		left: 100px;
 		color: white;
 		opacity: 90%;
-		font-size: 30px;
+		font-size: 40px;
 	}
 }
