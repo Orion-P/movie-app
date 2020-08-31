@@ -8,7 +8,6 @@ import "@brainhubeu/react-carousel/lib/style.css";
 
 const SlideShow = () => {
 	const [movies, setMovies] = useState([]);
-	const [currentMovie, setCurrentMovie] = useState({});
 
 	useEffect(() => {
 		axios
@@ -19,7 +18,6 @@ const SlideShow = () => {
 			})
 			.then(res => {
 				setMovies(res.data.results);
-				setCurrentMovie(movies[0]);
 			})
 			.catch(err => {
 				console.log(err);

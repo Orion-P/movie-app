@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import Nav from "./Nav";
-import SlideShow from "./SlideShow";
-import TvSliders from "./TvSliders";
-import MovieSliders from "./MovieSliders";
-import Buttons from "./Buttons";
+
 import Footer from "./Footer";
 import axios from "axios";
-import Routes from './Routes';
+import Routes from "./Routes";
 
 const App = () => {
 	const [term, setTerm] = useState("");
-	const [moviesOrTv, setMoviesOrTv] = useState(true);
+	const [searchResults, setSearchResults] = useState([]);
 
-	const onFormSubmit = term => {
+	const onFormSubmit = (term, e) => {
 		axios
 			.get("https://api.themoviedb.org/3/search/movie", {
 				params: {
@@ -21,7 +18,8 @@ const App = () => {
 				}
 			})
 			.then(res => {
-				console.log(res.data.results);
+				setSearchResults(res.data.results);
+				window.history.pushState({ page_id: "search" }, "", "/search");
 			})
 			.catch(err => {
 				console.log(err);
@@ -33,8 +31,8 @@ const App = () => {
 	return (
 		<div>
 			<Nav onFormSubmit={onFormSubmit} />
-			<Routes></Routes>
-            <Footer></Footer>
+			<Routes searchResults={searchResults}></Routes>
+			<Footer></Footer>
 		</div>
 	);
 };
