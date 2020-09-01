@@ -96,7 +96,7 @@
 	background-color: rgba(136, 48, 48, 0.548) !important;
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 325px) {
 	.text {
 		z-index: 1;
 		position: absolute !important;
@@ -119,12 +119,13 @@
 	.overview {
 		z-index: 1;
 		position: absolute !important;
-		top: 105px;
+		top: 110px;
 		left: 13px;
 		color: white;
 		/* opacity: 9.0%; */
-		font-size: 12px;
-		padding-right: 15px;
+		font-size: 11px;
+        padding-right: 45px;
+        margin-right: 0px !important;
 	}
 }
 
