@@ -6,7 +6,7 @@ import "@brainhubeu/react-carousel/lib/style.css";
 
 import "../css/Slideshow.css";
 
-const SlideShow = (props) => {
+const SlideShow = props => {
 	const [movies, setMovies] = useState([]);
 
 	useEffect(() => {
@@ -26,7 +26,11 @@ const SlideShow = (props) => {
 
 	const renderedMovies = movies.map(movie => {
 		return (
-			<div className="overlay" key={movie.id} style={{ width: "100%", backgroundColor: 'black' }}>
+			<div
+				className="overlay"
+				key={movie.id}
+				style={{ width: "100%", backgroundColor: "black" }}
+			>
 				<Link
 					onClick={e => {
 						props.setTitle(movie);

@@ -69,11 +69,11 @@ const Routes = props => {
 				</div>
 			</Link>
 		);
-    });
-    
-    const childChangeTitle = (item) => {
-        setCurrentTitle(item);
-    } 
+	});
+
+	const childChangeTitle = item => {
+		setCurrentTitle(item);
+	};
 
 	useEffect(() => {
 		console.log(props.searchResults);
@@ -82,7 +82,7 @@ const Routes = props => {
 	if (window.location.pathname === "/") {
 		return (
 			<div>
-				<SlideShow setTitle={childChangeTitle}/>
+				<SlideShow setTitle={childChangeTitle} />
 				<Buttons setMoviesOrTv={setMoviesOrTv}></Buttons>
 				{moviesOrTv === true ? (
 					<MovieSliders setTitle={childChangeTitle} />

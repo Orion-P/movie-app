@@ -9,7 +9,7 @@
 }
 
 #root > div > div.ui.fixed.text.menu {
-    background-color: black !important;
+	background-color: black !important;
 }
 
 .text {
@@ -19,16 +19,16 @@
 	left: 12px;
 	color: rgb(180, 43, 43) !important;
 	background-color: rgba(0, 0, 0, 0.561) !important;
-    
+
 	/* opacity: 9.0%; */
 	font-size: 20px;
 }
 
 .title.text {
-    color: rgb(224, 225, 230) !important;
-    padding: 7px;
-    border-radius: 20px;
-    padding-top: 10px;
+	color: rgb(224, 225, 230) !important;
+	padding: 7px;
+	border-radius: 20px;
+	padding-top: 10px;
 }
 
 .date {
@@ -36,8 +36,8 @@
 	position: absolute !important;
 	top: -17px;
 	right: 13px;
-    color: rgb(175, 68, 68);
-    
+	color: rgb(175, 68, 68);
+
 	/* opacity: 9.0%; */
 	font-size: 17px;
 }

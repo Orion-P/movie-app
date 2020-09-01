@@ -11,11 +11,11 @@ const Footer = () => {
 				textAlign: "center"
 			}}
 		>
-			<p style={{ color: "white", margin: "0 auto", fontSize: '23px' }}>
+			<p style={{ color: "white", margin: "0 auto", fontSize: "23px" }}>
 				<strong> Movie App Developed by Orion Poptean</strong>
 			</p>
 			<br></br>
-			<p style={{ color: "white", margin: "0 auto", fontSize: '20px' }}>
+			<p style={{ color: "white", margin: "0 auto", fontSize: "20px" }}>
 				<a
 					href="https://github.com/Orion-P/movie-app"
 					style={{ color: "skyblue" }}
