@@ -17,7 +17,6 @@
 	position: absolute !important;
 	top: 40px;
 	left: 12px;
-	color: rgb(180, 43, 43) !important;
 	background-color: rgba(0, 0, 0, 0.561) !important;
 
 	/* opacity: 9.0%; */
@@ -28,7 +27,6 @@
 	color: rgb(224, 225, 230) !important;
 	padding: 7px;
 	border-radius: 20px;
-	padding-top: 10px;
 }
 
 .date {
@@ -36,8 +34,7 @@
 	position: absolute !important;
 	top: -17px;
 	right: 13px;
-	color: rgb(175, 68, 68);
-
+	color: white;
 	/* opacity: 9.0%; */
 	font-size: 17px;
 }
@@ -97,6 +94,38 @@
 
 .left-button:hover {
 	background-color: rgba(136, 48, 48, 0.548) !important;
+}
+
+@media only screen and (min-width: 320px) {
+	.text {
+		z-index: 1;
+		position: absolute !important;
+		top: 33px;
+		left: 25px;
+		color: white;
+		/* opacity: 9.0%; */
+	}
+
+	.date {
+		z-index: 1;
+		position: absolute !important;
+		top: -15px;
+		right: 15px;
+		color: white;
+		/* opacity: 9.0%; */
+		font-size: 17px;
+	}
+
+	.overview {
+		z-index: 1;
+		position: absolute !important;
+		top: 105px;
+		left: 13px;
+		color: white;
+		/* opacity: 9.0%; */
+		font-size: 12px;
+		padding-right: 15px;
+	}
 }
 
 @media only screen and (min-width: 375px) {
