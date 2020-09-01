@@ -82,7 +82,7 @@ const Routes = props => {
 	if (window.location.pathname === "/") {
 		return (
 			<div>
-				<SlideShow />
+				<SlideShow setTitle={childChangeTitle}/>
 				<Buttons setMoviesOrTv={setMoviesOrTv}></Buttons>
 				{moviesOrTv === true ? (
 					<MovieSliders setTitle={childChangeTitle} />

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
 import "../css/Slideshow.css";
 
-const SlideShow = () => {
+const SlideShow = (props) => {
 	const [movies, setMovies] = useState([]);
 
 	useEffect(() => {
@@ -25,18 +26,26 @@ const SlideShow = () => {
 
 	const renderedMovies = movies.map(movie => {
 		return (
-			<div key={movie.id} style={{ width: "100%" }}>
-				<h1 className="title text">
-					{movie.original_title ? movie.original_title : null}
-				</h1>
-				<h2 className="date">
-					{movie.release_date.slice(5) + "-" + movie.release_date.slice(0, 4)}
-				</h2>
-				<h2 className="overview">
-					{movie.overview.length < 100
-						? movie.overview
-						: movie.overview.slice(0, 100) + "..."}
-				</h2>
+			<div className="overlay" key={movie.id} style={{ width: "100%", backgroundColor: 'black' }}>
+				<Link
+					onClick={e => {
+						props.setTitle(movie);
+					}}
+					to={"/title-details"}
+				>
+					<h1 className="title text">
+						{movie.original_title ? movie.original_title : null}
+					</h1>
+
+					<h2 className="date">
+						{movie.release_date.slice(5) + "-" + movie.release_date.slice(0, 4)}
+					</h2>
+					<h2 className="overview">
+						{movie.overview.length < 100
+							? movie.overview
+							: movie.overview.slice(0, 100) + "..."}
+					</h2>
+				</Link>
 				<div className="overlay">
 					<img
 						alt={movie.overview}
