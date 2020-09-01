@@ -1,33 +1,51 @@
 .title-details {
-    padding-top: 80px !important;
-    background-color: aliceblue;
+	padding-top: 80px !important;
+	background-color: aliceblue;
 }
 
 img.backdrop {
-    width: 100% !important;
+	width: 100% !important;
 }
 
 p {
-    padding: 25px 20px;
-    text-align: center;
+	padding: 25px 20px;
+	text-align: center;
 }
 
 .description {
-    margin-top: -40px;
-    margin-bottom: -30px;
-    font-size: 18px;
+	margin-top: -40px;
+	margin-bottom: -30px;
+	font-size: 18px;
 }
 
 .release {
-    font-size: 19px;
-
+	font-size: 19px;
 }
 
 .images {
-    padding-top: 20px;
+	padding-top: 20px;
 }
 
 .title {
-    font-size: 30px;
-    color: rgb(40, 40, 119)
+	font-size: 30px;
+	color: rgb(40, 40, 119);
+}
+
+@media only screen and (min-width: 800px) {
+	#root > div > div:nth-child(2) > div > img:nth-child(2) {
+		width: 30% !important;
+	}
+
+	
+}
+
+@media only screen and (min-width: 1200px) {
+	#root > div > div:nth-child(2) > div > img:nth-child(2) {
+		width: 20% !important;
+	}
+
+	#root > div > div:nth-child(2) > div > img.ui.image.images.backdrop {
+		padding: 50px;
+		width: 50% !important;
+	}
 }

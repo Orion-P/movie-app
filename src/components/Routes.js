@@ -15,7 +15,6 @@ import TitleDetails from "./TitleDetails";
 const Routes = props => {
 	const [moviesOrTv, setMoviesOrTv] = useState(true);
 	const [locationKeys, setLocationKeys] = useState([]);
-	const [updateCaro, setUpdateCaro] = useState(true);
 	const [caroIndex, setCaroIndex] = useState(0);
 	const [currentTitle, setCurrentTitle] = useState({});
 
@@ -70,7 +69,11 @@ const Routes = props => {
 				</div>
 			</Link>
 		);
-	});
+    });
+    
+    const childChangeTitle = (item) => {
+        setCurrentTitle(item);
+    } 
 
 	useEffect(() => {
 		console.log(props.searchResults);
@@ -81,7 +84,11 @@ const Routes = props => {
 			<div>
 				<SlideShow />
 				<Buttons setMoviesOrTv={setMoviesOrTv}></Buttons>
-				{moviesOrTv === true ? <MovieSliders /> : <TvSliders />}
+				{moviesOrTv === true ? (
+					<MovieSliders setTitle={childChangeTitle} />
+				) : (
+					<TvSliders setTitle={childChangeTitle} />
+				)}
 			</div>
 		);
 	}

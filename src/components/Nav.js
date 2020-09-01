@@ -13,9 +13,16 @@ class Nav extends React.Component {
 
 	render() {
 		return (
-			<div style={{ backgroundColor: "#1a0000" }} className="ui fixed text menu">
+			<div
+				style={{ backgroundColor: "#1a0000" }}
+				className="ui fixed text menu"
+			>
 				<div style={{ paddingLeft: "15px" }} className="item">
-					<i onClick={this.onIClick} href="/" className="icon link home big"></i>
+					<i
+						onClick={this.onIClick}
+						href="/"
+						className="icon link home big"
+					></i>
 				</div>
 
 				<div className="center item">
@@ -24,10 +31,8 @@ class Nav extends React.Component {
 						className="search"
 					/>
 				</div>
-              
-				<div id="fixmargin" className="right floated item">
-					<i href="/" className="icon link info circle big"></i>
-				</div>
+
+				<div id="fixmargin" className="right floated item"></div>
 			</div>
 		);
 	}

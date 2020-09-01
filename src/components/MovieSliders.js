@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import "../css/MovieSliders.css";
 
-const MovieSliders = () => {
+const MovieSliders = props => {
 	const [nowPlaying, setNowPlaying] = useState([]);
 	const [popular, setPopular] = useState([]);
 	const [topRated, setTopRated] = useState([]);
@@ -56,44 +57,74 @@ const MovieSliders = () => {
 	}, []);
 
 	const nowPlayingRendered = nowPlaying.map(item => {
+		if (item.poster_path === null) {
+			return null;
+		}
 		return (
-			<div key={item.id} className="slider">
-				<img
-					alt={item.overview}
-					className="ui image images"
-					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
-				></img>
+			<Link
+				onClick={e => {
+					props.setTitle(item);
+				}}
+				to={"/title-details"}
+			>
+				<div key={item.id} className="slider">
+					<img
+						alt={item.overview}
+						className="ui image images"
+						src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+					></img>
 
-				<div className="ui header titles">{item.title}</div>
-			</div>
+					<div className="ui header titles">{item.title}</div>
+				</div>
+			</Link>
 		);
 	});
 
 	const nowPopularRendered = popular.map(item => {
+		if (item.poster_path === null) {
+			return null;
+		}
 		return (
-			<div className="slider" key={item.id}>
-				<img
-					alt={item.overview}
-					className="ui image images"
-					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
-				></img>
+			<Link
+				onClick={e => {
+					props.setTitle(item);
+				}}
+				to={"/title-details"}
+			>
+				<div className="slider" key={item.id}>
+					<img
+						alt={item.overview}
+						className="ui image images"
+						src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+					></img>
 
-				<div className="ui header titles">{item.title}</div>
-			</div>
+					<div className="ui header titles">{item.title}</div>
+				</div>
+			</Link>
 		);
 	});
 
 	const nowTopRatedRendered = topRated.map(item => {
+		if (item.poster_path === null) {
+			return null;
+		}
 		return (
-			<div key={item.id} className="slider">
-				<img
-					alt={item.overview}
-					className="ui image images"
-					src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
-				></img>
+			<Link
+				onClick={e => {
+					props.setTitle(item);
+				}}
+				to={"/title-details"}
+			>
+				<div key={item.id} className="slider">
+					<img
+						alt={item.overview}
+						className="ui image images"
+						src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+					></img>
 
-				<div className="ui header titles">{item.title}</div>
-			</div>
+					<div className="ui header titles">{item.title}</div>
+				</div>
+			</Link>
 		);
 	});
 
